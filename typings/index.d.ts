@@ -413,20 +413,11 @@ declare module "noblox.js" {
 
     interface DeveloperProductAddResult
     {
-        universeId: number,
-        name: string,
-        priceInRobux: number,
-        description?: string,
-        productId: string
-    }
-
-    interface DeveloperProductUpdateResult
-    {
-        universeId: number,
-        name: string,
-        priceInRobux: number,
-        description?: string,
-        productId: number
+        id?: number,
+        name?: string,
+        Description?: string,
+        shopId?: number,
+        iconImageAssetId?: number
     }
 
     interface CheckDeveloperProductNameResult
@@ -1095,7 +1086,7 @@ declare module "noblox.js" {
      */
     function checkDeveloperProductName(universeId: number, productName: string, jar?: CookieJar, productId?: number): Promise<CheckDeveloperProductNameResult>;
 
-    function updateDeveloperProduct(universeId: number, productId: number, name: string, priceInRobux: number, description?: string, iconImageAssetId?: number, jar?: CookieJar): Promise<DeveloperProductUpdateResult>;
+    function updateDeveloperProduct(universeId: number, productId: number, name?: string, priceInRobux?: number, description?: string, iconImageAssetId?: number, jar?: CookieJar): Promise<void>;
 
     /// Group
 
